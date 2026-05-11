@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "tsc && vite build && bash ~/.agents/skills/here-now/scripts/publish.sh dist --slug snowy-monsoon-jvwb --client claude-code"
   },
   "devDependencies": {
     "@types/react": "^19.2.14",

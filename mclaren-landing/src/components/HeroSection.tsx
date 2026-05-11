@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion'
+import { motion, useMotionValue, useSpring, useTransform, type Variants } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
 import { ParticleField } from './ParticleField'
 import p1Car from '../assets/Mclaren P1 Front.png'
@@ -31,12 +31,12 @@ export function HeroSection() {
     return () => window.removeEventListener('mousemove', handleMouseMove)
   }, [mouseX, mouseY])
 
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, y: 30 },
     visible: (i: number) => ({
       opacity: 1,
       y: 0,
-      transition: { delay: i * 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+      transition: { delay: i * 0.15, duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
     }),
   }
 
